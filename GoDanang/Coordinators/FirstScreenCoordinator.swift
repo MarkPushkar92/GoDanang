@@ -25,6 +25,7 @@ class FirstScreenCoordinator: Coordinator {
     }
     
     func start() {
+        navigation.navigationBar.isHidden = true
         navigation.pushViewController(firstScreen.controller, animated: true)
      
     }

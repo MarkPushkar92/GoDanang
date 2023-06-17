@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		635DF5B32A3C57EF004FC48C /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DF5B22A3C57EF004FC48C /* FirstScreenView.swift */; };
 		635DF5B82A3C58F3004FC48C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DF5B72A3C58F3004FC48C /* Extensions.swift */; };
+		635DF5BA2A3C5DB3004FC48C /* CommonStrings .swift in Sources */ = {isa = PBXBuildFile; fileRef = 635DF5B92A3C5DB3004FC48C /* CommonStrings .swift */; };
+		636FD1E72A3DA8E3002EAD84 /* PlacesToVisitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636FD1E62A3DA8E3002EAD84 /* PlacesToVisitCell.swift */; };
 		63C257742A382DF6005E1D09 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C257732A382DF6005E1D09 /* NetworkDataFetcher.swift */; };
 		63C257762A382E07005E1D09 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C257752A382E07005E1D09 /* NetworkService.swift */; };
 		63C2577A2A382E33005E1D09 /* NetworkFetcherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C257792A382E33005E1D09 /* NetworkFetcherService.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		635DF5B22A3C57EF004FC48C /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
 		635DF5B72A3C58F3004FC48C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		635DF5B92A3C5DB3004FC48C /* CommonStrings .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CommonStrings .swift"; sourceTree = "<group>"; };
+		636FD1E62A3DA8E3002EAD84 /* PlacesToVisitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesToVisitCell.swift; sourceTree = "<group>"; };
 		63C257732A382DF6005E1D09 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		63C257752A382E07005E1D09 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		63C257792A382E33005E1D09 /* NetworkFetcherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFetcherService.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				635DF5B72A3C58F3004FC48C /* Extensions.swift */,
+				635DF5B92A3C5DB3004FC48C /* CommonStrings .swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 				63E7C5402A0E45DC00BEFA61 /* FirtsScreenViewModel.swift */,
 				63E7C5262A0E422A00BEFA61 /* ViewController.swift */,
 				635DF5B22A3C57EF004FC48C /* FirstScreenView.swift */,
+				636FD1E62A3DA8E3002EAD84 /* PlacesToVisitCell.swift */,
 			);
 			path = FirstScreen;
 			sourceTree = "<group>";
@@ -212,6 +218,7 @@
 			files = (
 				63C257762A382E07005E1D09 /* NetworkService.swift in Sources */,
 				63E7C5272A0E422A00BEFA61 /* ViewController.swift in Sources */,
+				635DF5BA2A3C5DB3004FC48C /* CommonStrings .swift in Sources */,
 				63C2577A2A382E33005E1D09 /* NetworkFetcherService.swift in Sources */,
 				63E7C5372A0E42A300BEFA61 /* MainCordinator.swift in Sources */,
 				63E7C5392A0E438F00BEFA61 /* Coordinator.swift in Sources */,
@@ -221,6 +228,7 @@
 				63E7C5232A0E422A00BEFA61 /* AppDelegate.swift in Sources */,
 				63E7C53B2A0E43AD00BEFA61 /* TabBarViewController.swift in Sources */,
 				635DF5B82A3C58F3004FC48C /* Extensions.swift in Sources */,
+				636FD1E72A3DA8E3002EAD84 /* PlacesToVisitCell.swift in Sources */,
 				63C2577C2A382E43005E1D09 /* NetworkingModel.swift in Sources */,
 				63E7C5412A0E45DC00BEFA61 /* FirtsScreenViewModel.swift in Sources */,
 				63E7C5252A0E422A00BEFA61 /* SceneDelegate.swift in Sources */,
