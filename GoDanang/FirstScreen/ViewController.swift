@@ -9,21 +9,46 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let networking = NetworkFetcherService()
+    weak var coordinator: FirstScreenCoordinator?
     
-    let firstScreenView = FirstScreenView()
+    private let viewModel: FirtsScreenViewModel
     
+    private let firstScreenView = FirstScreenView()
+    
+    //MARK: Init and LifeCycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        getDataForCollection()
+        
+
     }
+    
+    private func getDataForCollection() {
+        viewModel.getData { [self] name, url in
+            guard let name = name else { return }
+            guard let url = url else { return }
+            firstScreenView.data.append((name, url))
+        }
+    }
+    
+    init(viewModel: FirtsScreenViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
 }
 
 private extension ViewController {
     
      func setupViews() {
-         view.backgroundColor = .white
+         view.backgroundColor = UIColor(red: 0.17, green: 0.22, blue: 0.24, alpha: 1)
          view.addSubview(firstScreenView)
          
          let constrains = [

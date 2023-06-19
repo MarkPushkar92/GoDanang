@@ -16,7 +16,7 @@ struct ControllerFactoryImpl: ControllerFactory {
     
     func makeFirstScreen() -> (viewModel: FirtsScreenViewModel, controller: ViewController) {
         let viewModel = FirtsScreenViewModel()
-        let vc = ViewController()
+        let vc = ViewController(viewModel: viewModel)
         return (viewModel, vc)
     }
  

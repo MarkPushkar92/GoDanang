@@ -21,8 +21,7 @@ class PlacesToVisitCell: UICollectionViewCell {
        
        var nameLabel: UILabel = {
            var view = UILabel()
-           view.textColor = .white
-           view.font = UIFont(name: "Montserrat-Bold", size: 14)
+           view.textColor = .lightGray
            view.text = ""
            view.numberOfLines = 0
            view.lineBreakMode = .byWordWrapping
@@ -41,7 +40,9 @@ class PlacesToVisitCell: UICollectionViewCell {
        }
        
        private func setupViews() {
-           backgroundColor = .white
+           backgroundColor = UIColor(red: 0.17, green: 0.22, blue: 0.24, alpha: 1)
+           layer.borderColor = UIColor.black.cgColor
+           layer.borderWidth = 2
            layer.cornerRadius = 10
            contentView.addSubviews(image, nameLabel)
 
@@ -49,11 +50,11 @@ class PlacesToVisitCell: UICollectionViewCell {
                image.leadingAnchor.constraint(equalTo: self.leadingAnchor),
                image.trailingAnchor.constraint(equalTo: self.trailingAnchor),
                image.topAnchor.constraint(equalTo: self.topAnchor),
-               image.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+               image.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -40),
               
                
                nameLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-               nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: -40),
+               nameLabel.topAnchor.constraint(equalTo: image.bottomAnchor),
                nameLabel.widthAnchor.constraint(equalToConstant: 110),
               
            ]
