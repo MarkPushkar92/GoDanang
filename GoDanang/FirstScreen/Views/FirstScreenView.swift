@@ -8,8 +8,10 @@
 import UIKit
 
 class FirstScreenView: UIView {
-        
-    var data: [(String?, String?)] = [] {
+    
+    var onTap: ((POIdetaisl) -> (Void))?
+            
+    var data = [POIdetaisl]() {
         didSet {
             if data.count == 6 {
                 self.collectionView.reloadData()
@@ -69,6 +71,8 @@ class FirstScreenView: UIView {
 
         ]
         NSLayoutConstraint.activate(constraints)
+        
+        // collectionView setUp 
 
         collectionView.alwaysBounceHorizontal = true
         layout.scrollDirection = .horizontal
@@ -106,17 +110,18 @@ extension FirstScreenView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PlacesToVisitCell.self), for: indexPath) as! PlacesToVisitCell
-        cell.nameLabel.text = data[indexPath.row].0
-        guard let urlString = data[indexPath.row].1 else { return cell }
+        
+        cell.nameLabel.text = data[indexPath.row].name
+        guard let urlString = data[indexPath.row].photoURLs[0] else { return cell }
         if let url = URL(string: urlString) {
             cell.image.load(url: url)
         }
-     
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      
+        guard let onTap else { return }
+        onTap(data[indexPath.row])
     }
 }
 
@@ -134,7 +139,7 @@ extension FirstScreenView: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
 
     }
     

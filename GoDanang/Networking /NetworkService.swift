@@ -11,7 +11,7 @@ struct NetworkService {
     
     func request(urlString: String, completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: urlString) else {return}
-        var request = URLRequest(url: url)
+        let request = URLRequest(url: url)
         let task = createDataTask(from: request, completion: completion)
         task.resume()
     }

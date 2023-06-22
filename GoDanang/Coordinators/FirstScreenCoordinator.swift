@@ -17,8 +17,6 @@ class FirstScreenCoordinator: Coordinator {
         factory.makeFirstScreen()
     }()
     
-
-        
     init(navigation: UINavigationController,factory: ControllerFactory) {
         self.navigation = navigation
         self.factory = factory
@@ -27,7 +25,17 @@ class FirstScreenCoordinator: Coordinator {
     func start() {
         navigation.navigationBar.isHidden = true
         navigation.pushViewController(firstScreen.controller, animated: true)
+        
+        firstScreen.viewModel.onShowNext = { details in
+            
+            guard let details = details else { return }
+            
+            let vc = POIdetailsViewController(viewModel: self.firstScreen.viewModel, details: details)
+            self.navigation.pushViewController(vc, animated: true)
+            
+        }
      
     }
     
+   
 }

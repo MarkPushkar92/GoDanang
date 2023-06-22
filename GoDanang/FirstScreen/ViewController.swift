@@ -20,19 +20,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        getDataForCollection()
-        
-
+        getData()
     }
-    
-    private func getDataForCollection() {
-        viewModel.getData { [self] name, url in
-            guard let name = name else { return }
-            guard let url = url else { return }
-            firstScreenView.data.append((name, url))
+        
+    private func getData() {
+        viewModel.getDetaisAndPhotos { poi in
+            self.firstScreenView.data.append(poi)
         }
     }
-    
+
     init(viewModel: FirtsScreenViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -41,13 +37,13 @@ class ViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
     
 }
 
 private extension ViewController {
     
      func setupViews() {
+         firstScreenView.onTap = viewModel.onTapShowNextModule
          view.backgroundColor = UIColor(red: 0.17, green: 0.22, blue: 0.24, alpha: 1)
          view.addSubview(firstScreenView)
          

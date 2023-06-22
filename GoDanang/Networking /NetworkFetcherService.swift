@@ -25,10 +25,10 @@ class NetworkFetcherService {
         networkDataFetcher.fetchData(urlString: urlString, response: completion)
     }
     
-    func fetchTogether(locationId: String, closure: @escaping (String?, String?) -> Void) {
+    func fetchData(locationId: String, closure: @escaping (LocationDetails?, LocationPhotos?) -> Void) {
         fetchDetails(locationId: locationId) { details in
             self.fetchPhotos(locationId: locationId) { photos in
-                closure(details?.name, photos?.data?[0].images?.original?.url)
+                closure(details, photos)
             }
         }
     }

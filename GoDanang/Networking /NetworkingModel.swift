@@ -24,11 +24,11 @@ struct LocationDetails: Codable {
 
 // MARK: - LocationPhotos
 struct LocationPhotos: Codable {
-    let data: [Datum]?
+    let data: [Photos]?
 }
 
 // MARK: - Datum
-struct Datum: Codable {
+struct Photos: Codable {
     let id: Int?
     let isBlessed: Bool?
     let images: Images?

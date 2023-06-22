@@ -18,7 +18,6 @@ class PlacesToVisitCell: UICollectionViewCell {
            return image
        }()
        
-       
        var nameLabel: UILabel = {
            var view = UILabel()
            view.textColor = .lightGray
